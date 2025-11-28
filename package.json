@@ -2,6 +2,7 @@
   "name": "la-classe-front",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@ant-design/icons": "^6.1.0",
     "@reduxjs/toolkit": "^2.10.1",
@@ -45,6 +46,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:prod-fr": "dotenv -e .env.fr.prod react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "npm run lint:format && npm run lint:fix",
     "lint:fix": "eslint ./src --ext .tsx,.ts,.js --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{ts,js,tsx,css,scss,md,json}\" "
@@ -81,6 +84,7 @@
     "eslint-plugin-prettier": "^4.2.5",
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-react": "^7.37.5",
+    "gh-pages": "^6.3.0",
     "rc-menu": "^9.16.1"
   }
 }

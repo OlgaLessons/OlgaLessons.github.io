@@ -1,0 +1,67 @@
+{
+  "ADMIN": "Admin",
+  "OPERATOR": "Opérateur",
+  "BAD_PASSWORD": "Mauvais mot de passe",
+  "USER_NOT_FOUND": "Utilisateur non trouvé",
+
+  "APP_NAME": "La Classe",
+  "TAGLINE": "École de langue française",
+  "HERO_SUBTITLE": "Apprenez le français avec plaisir en ligne",
+  "HERO_DESCRIPTION": "Cours interactifs en groupe via Zoom avec des professeurs expérimentés. Nous proposons des cours pour tous les niveaux : du débutant à l'avancé.",
+  "HERO_CTA": "Rejoindre notre chaîne Telegram",
+  "BOOK_LESSON": "Réserver un cours",
+
+  "LANGUAGE": "Langue",
+  "LANG_EN": "Anglais",
+  "LANG_FR": "Français",
+  "LANG_RU": "Russe",
+
+  "ABOUT_TITLE": "À propos de nous",
+  "ABOUT_DESC": "La Classe est une école de langues en ligne spécialisée dans l'enseignement du français. Nous organisons des cours interactifs via Zoom où les étudiants peuvent pratiquer la conversation, apprendre la grammaire et s'immerger dans la culture française.",
+  "ABOUT_FEATURE_1": "Professeurs expérimentés de langue maternelle",
+  "ABOUT_FEATURE_2": "Petits groupes pour un apprentissage efficace",
+  "ABOUT_FEATURE_3": "Horaires flexibles",
+  "ABOUT_FEATURE_4": "Tous les supports de cours inclus",
+
+  "LEVELS_TITLE": "Niveaux de cours",
+  "LEVELS_DESC": "Nous proposons des cours pour tous les niveaux",
+  "LEVEL_A1_TITLE": "A1 - Débutant",
+  "LEVEL_A1_DESC": "Pour ceux qui commencent à apprendre le français. Vocabulaire de base, phrases simples et fondamentaux de la grammaire.",
+  "LEVEL_A2_TITLE": "A2/B1 - Élémentaire/Intermédiaire",
+  "LEVEL_A2_DESC": "Développement des compétences conversationnelles, élargissement du vocabulaire, travail sur la grammaire et la compréhension.",
+
+  "SCHEDULE_TITLE": "Horaires des cours",
+  "SCHEDULE_DESC": "Tous les cours ont lieu en ligne via Zoom",
+  "SCHEDULE_TIME": "Samedis à 10h00 (heure de Paris)",
+  "SCHEDULE_A1": "Niveau A1 - Dimanches à 10h00 (heure de Paris)",
+  "SCHEDULE_A2": "Niveau A2/B1 - Samedis à 10h00 (heure de Paris)",
+
+  "TEACHER_TITLE": "Votre professeur",
+  "TEACHER_NAME": "Olga",
+  "TEACHER_DESC": "Professeur de français professionnel avec une vaste expérience. J'enseigne avec amour pour la langue et une approche individuelle pour chaque élève. Rejoignez-nous pour apprendre le français avec plaisir !",
+  "TEACHER_QUOTE": "Apprendre le français doit être agréable et passionnant !",
+
+  "FORMAT_TITLE": "Format des cours",
+  "FORMAT_ITEM_1": "Exercices interactifs et jeux",
+  "FORMAT_ITEM_2": "Pratique de la conversation avec un locuteur natif",
+  "FORMAT_ITEM_3": "Grammaire expliquée de manière accessible",
+  "FORMAT_ITEM_4": "Aperçus culturels et faits intéressants sur la France",
+  "FORMAT_ITEM_5": "Tous les supports fournis après chaque cours",
+
+  "WHY_US_TITLE": "Pourquoi nous choisir",
+  "WHY_US_1_TITLE": "Atmosphère conviviale",
+  "WHY_US_1_DESC": "Nous créons un environnement confortable où chacun peut s'exprimer librement",
+  "WHY_US_2_TITLE": "Méthodes éprouvées",
+  "WHY_US_2_DESC": "Nous utilisons des techniques d'enseignement modernes qui ont fait leurs preuves",
+  "WHY_US_3_TITLE": "Communauté",
+  "WHY_US_3_DESC": "Notre chaîne Telegram avec du matériel utile et des opportunités de pratique",
+
+  "CTA_TITLE": "Prêt à commencer ?",
+  "CTA_DESC": "Rejoignez notre chaîne Telegram et inscrivez-vous à votre premier cours !",
+  "CTA_BUTTON": "Rejoindre la chaîne Telegram",
+
+  "CONTACT_TITLE": "Contact",
+  "CONTACT_DESC": "Écrivez-nous sur Telegram pour réserver un cours ou obtenir plus d'informations",
+  "CONTACT_TELEGRAM": "Chaîne Telegram",
+  "CONTACT_PRIVATE": "Messages privés"
+}

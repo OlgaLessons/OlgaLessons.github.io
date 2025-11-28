@@ -10,6 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import { defaultTheme } from './utils/theme/antdThemeConfig'
 import { Provider } from 'react-redux'
 import { persistor, store } from './utils/redux/store'
+import './utils/localization/i18n'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

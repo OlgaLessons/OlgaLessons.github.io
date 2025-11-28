@@ -1,5 +1,5 @@
 import { Flex, Layout, Spin } from 'antd'
-import Logo from '../../assets/logo.svg'
+import Logo from '../../assets/Logo.png'
 
 export default function AppFallback() {
   return (

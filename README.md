@@ -1,4 +1,26 @@
-# Getting Started with Create React App
+# La Classe - French Language School Landing Page
+
+A beautiful, multilingual landing page for La Classe, an online French language school. This project showcases the school's courses, teaching methodology, and provides easy access to join their Telegram community.
+
+## 🌟 Features
+
+- **Multilingual Support**: Available in English, French, and Russian
+- **Responsive Design**: Optimized for all devices
+- **Modern UI**: Beautiful gradient designs and smooth animations
+- **Course Information**: Detailed information about A1 and A2/B1 level courses
+- **Teacher Profile**: Introduction to the instructor
+- **Easy Contact**: Direct links to Telegram channel and private messages
+
+## 🚀 Tech Stack
+
+- React 19.2
+- TypeScript
+- Ant Design 5
+- i18next for internationalization
+- SCSS for styling
+- Redux Toolkit for state management
+
+## 📋 Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

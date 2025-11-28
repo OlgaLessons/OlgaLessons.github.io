@@ -1,0 +1,67 @@
+{
+  "ADMIN": "Admin",
+  "OPERATOR": "Operator",
+  "BAD_PASSWORD": "Invalid password!",
+  "USER_NOT_FOUND": "User not found!",
+
+  "APP_NAME": "La Classe",
+  "TAGLINE": "French Language School",
+  "HERO_SUBTITLE": "Learn French with pleasure in an online format",
+  "HERO_DESCRIPTION": "Interactive group lessons via Zoom with experienced teachers. We offer courses for all levels: from beginners to advanced.",
+  "HERO_CTA": "Join Our Telegram Channel",
+  "BOOK_LESSON": "Book a Lesson",
+
+  "LANGUAGE": "Language",
+  "LANG_EN": "English",
+  "LANG_FR": "French",
+  "LANG_RU": "Russian",
+
+  "ABOUT_TITLE": "About Us",
+  "ABOUT_DESC": "La Classe is an online language school specializing in teaching French. We conduct interactive lessons via Zoom where students can practice conversational skills, learn grammar, and immerse themselves in French culture.",
+  "ABOUT_FEATURE_1": "Experienced native-speaking teachers",
+  "ABOUT_FEATURE_2": "Small groups for effective learning",
+  "ABOUT_FEATURE_3": "Flexible schedule",
+  "ABOUT_FEATURE_4": "All learning materials included",
+
+  "LEVELS_TITLE": "Course Levels",
+  "LEVELS_DESC": "We offer courses for all proficiency levels",
+  "LEVEL_A1_TITLE": "A1 - Beginner",
+  "LEVEL_A1_DESC": "For those starting to learn French. Basic vocabulary, simple phrases, and foundations of grammar.",
+  "LEVEL_A2_TITLE": "A2/B1 - Elementary/Intermediate",
+  "LEVEL_A2_DESC": "Development of conversational skills, expanding vocabulary, working on grammar and comprehension.",
+
+  "SCHEDULE_TITLE": "Class Schedule",
+  "SCHEDULE_DESC": "All classes are held online via Zoom",
+  "SCHEDULE_TIME": "Saturdays at 10:00 AM (Paris time)",
+  "SCHEDULE_A1": "A1 Level - Sundays at 10:00 AM (Paris time)",
+  "SCHEDULE_A2": "A2/B1 Level - Saturdays at 10:00 AM (Paris time)",
+
+  "TEACHER_TITLE": "Your Teacher",
+  "TEACHER_NAME": "Olga",
+  "TEACHER_DESC": "Professional French teacher with extensive experience. I conduct lessons with love for the language and an individual approach to each student. Join us to learn French with pleasure!",
+  "TEACHER_QUOTE": "Learning French should be enjoyable and engaging!",
+
+  "FORMAT_TITLE": "Lesson Format",
+  "FORMAT_ITEM_1": "Interactive exercises and games",
+  "FORMAT_ITEM_2": "Conversational practice with a native speaker",
+  "FORMAT_ITEM_3": "Grammar explained in an accessible way",
+  "FORMAT_ITEM_4": "Cultural insights and interesting facts about France",
+  "FORMAT_ITEM_5": "All materials provided after each lesson",
+
+  "WHY_US_TITLE": "Why Choose Us",
+  "WHY_US_1_TITLE": "Friendly Atmosphere",
+  "WHY_US_1_DESC": "We create a comfortable environment where everyone can express themselves freely",
+  "WHY_US_2_TITLE": "Proven Methods",
+  "WHY_US_2_DESC": "We use modern teaching techniques that have proven effective",
+  "WHY_US_3_TITLE": "Community",
+  "WHY_US_3_DESC": "Our Telegram channel with useful materials and practice opportunities",
+
+  "CTA_TITLE": "Ready to Start?",
+  "CTA_DESC": "Join our Telegram channel and sign up for your first lesson!",
+  "CTA_BUTTON": "Join Telegram Channel",
+
+  "CONTACT_TITLE": "Contact",
+  "CONTACT_DESC": "Write to us on Telegram to book a lesson or get more information",
+  "CONTACT_TELEGRAM": "Telegram Channel",
+  "CONTACT_PRIVATE": "Private Messages"
+}

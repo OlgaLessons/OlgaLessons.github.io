@@ -146,5 +146,22 @@
   "FAQ_5_Q": "Do you offer refunds?",
   "FAQ_5_A": "Yes! If you're not satisfied after your first lesson, we offer a full refund. Your satisfaction is our priority.",
   "FAQ_6_Q": "Can I switch between group and private lessons?",
-  "FAQ_6_A": "Of course! Many students combine both formats for optimal results. Contact us anytime to adjust your learning plan."
+  "FAQ_6_A": "Of course! Many students combine both formats for optimal results. Contact us anytime to adjust your learning plan.",
+
+  "CONTACT_NAME": "Your Name",
+  "CONTACT_NAME_PLACEHOLDER": "Your Name...",
+  "CONTACT_NAME_REQUIRED": "Please enter your name",
+  "CONTACT_EMAIL": "Your Email",
+  "CONTACT_EMAIL_PLACEHOLDER": "Your E-mail...",
+  "CONTACT_EMAIL_REQUIRED": "Please enter your email",
+  "CONTACT_EMAIL_INVALID": "Please enter a valid email",
+  "CONTACT_TELEGRAM_TAG": "Telegram (optional)",
+  "CONTACT_TELEGRAM_PLACEHOLDER": "Your telegram tag",
+  "CONTACT_MESSAGE": "Your Message",
+  "CONTACT_MESSAGE_PLACEHOLDER": "Your Message",
+  "CONTACT_MESSAGE_REQUIRED": "Please enter your message",
+  "CONTACT_SUBMIT": "Send Message Now",
+  "MESSAGE_SENT": "Message sent successfully!",
+  "MESSAGE_FAILED": "Failed to send message. Please try again.",
+  "MESSAGE_ERROR": "Error sending message. Please try again."
 }

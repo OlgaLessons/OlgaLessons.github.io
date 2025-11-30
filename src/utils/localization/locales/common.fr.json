@@ -146,5 +146,22 @@
   "FAQ_5_Q": "Proposez-vous des remboursements ?",
   "FAQ_5_A": "Oui ! Si vous n'êtes pas satisfait après votre première leçon, nous offrons un remboursement complet. Votre satisfaction est notre priorité.",
   "FAQ_6_Q": "Puis-je alterner entre cours en groupe et cours particuliers ?",
-  "FAQ_6_A": "Bien sûr ! Beaucoup d'étudiants combinent les deux formats pour des résultats optimaux. Contactez-nous à tout moment pour ajuster votre plan d'apprentissage."
+  "FAQ_6_A": "Bien sûr ! Beaucoup d'étudiants combinent les deux formats pour des résultats optimaux. Contactez-nous à tout moment pour ajuster votre plan d'apprentissage.",
+
+  "CONTACT_NAME": "Votre nom",
+  "CONTACT_NAME_PLACEHOLDER": "Votre nom...",
+  "CONTACT_NAME_REQUIRED": "Veuillez entrer votre nom",
+  "CONTACT_EMAIL": "Votre email",
+  "CONTACT_EMAIL_PLACEHOLDER": "Votre e-mail...",
+  "CONTACT_EMAIL_REQUIRED": "Veuillez entrer votre email",
+  "CONTACT_EMAIL_INVALID": "Veuillez entrer un email valide",
+  "CONTACT_TELEGRAM_TAG": "Telegram (optionnel)",
+  "CONTACT_TELEGRAM_PLACEHOLDER": "Votre identifiant telegram",
+  "CONTACT_MESSAGE": "Votre message",
+  "CONTACT_MESSAGE_PLACEHOLDER": "Votre message",
+  "CONTACT_MESSAGE_REQUIRED": "Veuillez entrer votre message",
+  "CONTACT_SUBMIT": "Envoyer le message",
+  "MESSAGE_SENT": "Message envoyé avec succès !",
+  "MESSAGE_FAILED": "Échec de l'envoi du message. Veuillez réessayer.",
+  "MESSAGE_ERROR": "Erreur lors de l'envoi du message. Veuillez réessayer."
 }

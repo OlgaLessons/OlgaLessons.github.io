@@ -1231,44 +1231,79 @@
   .contact-section {
     background: white;
 
-    .contact-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 40px;
+    .section-heading {
+      @media (max-width: 991px) {
+        text-align: center;
+      }
+    }
+
+    .contact-info {
+      margin-top: 32px;
+
+      @media (max-width: 991px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .contact-button {
+      height: 48px;
+      padding: 0 32px;
+      font-size: 1.1rem;
+      border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      min-height: 44px;
 
       @media (max-width: 576px) {
-        margin-top: 30px;
-        gap: 12px;
+        font-size: 1rem;
+        padding: 0 28px;
+        width: 100%;
+        max-width: 300px;
       }
 
-      .contact-button {
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      }
+
+      @media (hover: none) {
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+
+    .contact-form-card {
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      padding: 16px 8px;
+
+      @media (min-width: 768px) {
+        padding: 24px 16px;
+      }
+
+      .ant-form-item-label > label {
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .ant-input,
+      .ant-input-textarea textarea {
+        border-radius: 8px;
+        font-size: 1rem;
+      }
+
+      .contact-submit-button {
         height: 48px;
-        padding: 0 32px;
         font-size: 1.1rem;
         border-radius: 24px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-        min-height: 44px; // Touch-friendly
-
-        @media (max-width: 576px) {
-          font-size: 1rem;
-          padding: 0 28px;
-          width: 100%;
-          max-width: 300px;
-        }
+        font-weight: 600;
+        margin-top: 8px;
 
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        // Prevent hover effects on touch devices
-        @media (hover: none) {
-          &:hover {
-            transform: none;
-          }
+          box-shadow: 0 4px 16px rgba(24, 144, 255, 0.3);
         }
       }
     }

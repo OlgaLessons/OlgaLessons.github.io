@@ -1,5 +1,16 @@
-import React from 'react'
-import { Button, Select, Typography, Card, Row, Col, Flex } from 'antd'
+import React, { useState } from 'react'
+import {
+  Button,
+  Select,
+  Typography,
+  Card,
+  Row,
+  Col,
+  Flex,
+  Form,
+  Input,
+  message,
+} from 'antd'
 import { useTranslation } from 'react-i18next'
 import {
   BookOutlined,
@@ -22,15 +33,62 @@ import Olga from '../../assets/Olga.jpg'
 import './Landing.scss'
 
 const { Title, Paragraph, Text } = Typography
+const { TextArea } = Input
+
+const TELEGRAM_TOKEN = '8251337207:AAGauA4UqH9FQ4gXRT1eG62m9IoiH_egW1Q'
+const CHAT_ID = '-1003047352853'
 
 export default function Landing() {
   const { t, i18n } = useTranslation('common')
+  const [form] = Form.useForm()
+  const [loading, setLoading] = useState(false)
 
   const languages = [
     { value: 'en', label: t('LANG_EN') },
     { value: 'fr', label: t('LANG_FR') },
     { value: 'ru', label: t('LANG_RU') },
   ]
+
+  const handleSubmit = async (values: any) => {
+    setLoading(true)
+    const { name, email, telegram, message: msg } = values
+
+    const styledMessage = `
+👤 *Client Information:*
+• *Name:* ${name}
+• *Telegram:* ${telegram || 'Not provided'}
+• *Email:* ${email}
+
+💬 *Message:*
+${msg}
+    `.trim()
+
+    try {
+      const response = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: styledMessage,
+            parse_mode: 'Markdown',
+          }),
+        },
+      )
+
+      if (response.ok) {
+        message.success(t('MESSAGE_SENT') || 'Message sent successfully!')
+        form.resetFields()
+      } else {
+        message.error(t('MESSAGE_FAILED') || 'Failed to send message.')
+      }
+    } catch (err) {
+      message.error(t('MESSAGE_ERROR') || 'Error sending message.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="landing-page">
@@ -73,7 +131,9 @@ export default function Landing() {
                     {t('TAGLINE')}
                   </Title>
                   <Paragraph className="hero-description">{t('HERO_SUBTITLE')}</Paragraph>
-                  <Paragraph className="hero-description-detail">{t('HERO_DESCRIPTION')}</Paragraph>
+                  <Paragraph className="hero-description-detail">
+                    {t('HERO_DESCRIPTION')}
+                  </Paragraph>
                   <div className="hero-buttons">
                     <Button
                       type="primary"
@@ -216,7 +276,9 @@ export default function Landing() {
                     <Title level={3} className="level-title">
                       {t('LEVEL_A1_TITLE')}
                     </Title>
-                    <Paragraph className="level-description">{t('LEVEL_A1_DESC')}</Paragraph>
+                    <Paragraph className="level-description">
+                      {t('LEVEL_A1_DESC')}
+                    </Paragraph>
                     <div className="schedule-info">
                       <ClockCircleOutlined />
                       <Text className="schedule-text">{t('SCHEDULE_A1')}</Text>
@@ -238,7 +300,9 @@ export default function Landing() {
                     <Title level={3} className="level-title">
                       {t('LEVEL_A2_TITLE')}
                     </Title>
-                    <Paragraph className="level-description">{t('LEVEL_A2_DESC')}</Paragraph>
+                    <Paragraph className="level-description">
+                      {t('LEVEL_A2_DESC')}
+                    </Paragraph>
                     <div className="schedule-info">
                       <ClockCircleOutlined />
                       <Text className="schedule-text">{t('SCHEDULE_A2')}</Text>
@@ -350,7 +414,9 @@ export default function Landing() {
                       <HeartOutlined /> {t('HAPPY_STUDENTS_COUNT')}
                     </div>
                   </div>
-                  <Paragraph className="teacher-description">{t('TEACHER_DESC')}</Paragraph>
+                  <Paragraph className="teacher-description">
+                    {t('TEACHER_DESC')}
+                  </Paragraph>
                   <blockquote className="teacher-quote">
                     <CommentOutlined className="quote-icon" />
                     <Text italic>&ldquo;{t('TEACHER_QUOTE')}&rdquo;</Text>
@@ -384,7 +450,9 @@ export default function Landing() {
                   <Title level={4} className="result-title">
                     {t('RESULT_1_TITLE')}
                   </Title>
-                  <Paragraph className="result-description">{t('RESULT_1_DESC')}</Paragraph>
+                  <Paragraph className="result-description">
+                    {t('RESULT_1_DESC')}
+                  </Paragraph>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
@@ -395,7 +463,9 @@ export default function Landing() {
                   <Title level={4} className="result-title">
                     {t('RESULT_2_TITLE')}
                   </Title>
-                  <Paragraph className="result-description">{t('RESULT_2_DESC')}</Paragraph>
+                  <Paragraph className="result-description">
+                    {t('RESULT_2_DESC')}
+                  </Paragraph>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
@@ -406,7 +476,9 @@ export default function Landing() {
                   <Title level={4} className="result-title">
                     {t('RESULT_3_TITLE')}
                   </Title>
-                  <Paragraph className="result-description">{t('RESULT_3_DESC')}</Paragraph>
+                  <Paragraph className="result-description">
+                    {t('RESULT_3_DESC')}
+                  </Paragraph>
                 </Card>
               </Col>
               <Col xs={24} sm={12} lg={6}>
@@ -417,7 +489,9 @@ export default function Landing() {
                   <Title level={4} className="result-title">
                     {t('RESULT_4_TITLE')}
                   </Title>
-                  <Paragraph className="result-description">{t('RESULT_4_DESC')}</Paragraph>
+                  <Paragraph className="result-description">
+                    {t('RESULT_4_DESC')}
+                  </Paragraph>
                 </Card>
               </Col>
             </Row>
@@ -431,7 +505,9 @@ export default function Landing() {
               <Title level={2} className="section-title">
                 {t('TESTIMONIALS_TITLE')}
               </Title>
-              <Paragraph className="section-subtitle">{t('TESTIMONIALS_SUBTITLE')}</Paragraph>
+              <Paragraph className="section-subtitle">
+                {t('TESTIMONIALS_SUBTITLE')}
+              </Paragraph>
               <div className="title-decoration">
                 <span className="decoration-line"></span>
                 <SmileOutlined className="decoration-icon" />
@@ -440,13 +516,23 @@ export default function Landing() {
             </div>
             <Row gutter={[32, 32]}>
               <Col xs={24} md={8}>
-                <Card className="testimonial-card" bordered={false} style={{ height: '100%' }}>
-                  <Flex vertical justify="space-between" style={{ minHeight: 220, height: '100%' }}>
+                <Card
+                  className="testimonial-card"
+                  bordered={false}
+                  style={{ height: '100%' }}
+                >
+                  <Flex
+                    vertical
+                    justify="space-between"
+                    style={{ minHeight: 220, height: '100%' }}
+                  >
                     <div>
                       <div className="testimonial-quote-icon">
                         <CommentOutlined />
                       </div>
-                      <Paragraph className="testimonial-text">&ldquo;{t('TESTIMONIAL_1_TEXT')}&rdquo;</Paragraph>
+                      <Paragraph className="testimonial-text">
+                        &ldquo;{t('TESTIMONIAL_1_TEXT')}&rdquo;
+                      </Paragraph>
                     </div>
                     <div className="testimonial-author">
                       <div className="author-avatar">
@@ -461,13 +547,23 @@ export default function Landing() {
                 </Card>
               </Col>
               <Col xs={24} md={8}>
-                <Card className="testimonial-card" bordered={false} style={{ height: '100%' }}>
-                  <Flex vertical justify="space-between" style={{ minHeight: 220, height: '100%' }}>
+                <Card
+                  className="testimonial-card"
+                  bordered={false}
+                  style={{ height: '100%' }}
+                >
+                  <Flex
+                    vertical
+                    justify="space-between"
+                    style={{ minHeight: 220, height: '100%' }}
+                  >
                     <div>
                       <div className="testimonial-quote-icon">
                         <CommentOutlined />
                       </div>
-                      <Paragraph className="testimonial-text">&ldquo;{t('TESTIMONIAL_2_TEXT')}&rdquo;</Paragraph>
+                      <Paragraph className="testimonial-text">
+                        &ldquo;{t('TESTIMONIAL_2_TEXT')}&rdquo;
+                      </Paragraph>
                     </div>
                     <div className="testimonial-author">
                       <div className="author-avatar">
@@ -482,13 +578,23 @@ export default function Landing() {
                 </Card>
               </Col>
               <Col xs={24} md={8}>
-                <Card className="testimonial-card" bordered={false} style={{ height: '100%' }}>
-                  <Flex vertical justify="space-between" style={{ minHeight: 220, height: '100%' }}>
+                <Card
+                  className="testimonial-card"
+                  bordered={false}
+                  style={{ height: '100%' }}
+                >
+                  <Flex
+                    vertical
+                    justify="space-between"
+                    style={{ minHeight: 220, height: '100%' }}
+                  >
                     <div>
                       <div className="testimonial-quote-icon">
                         <CommentOutlined />
                       </div>
-                      <Paragraph className="testimonial-text">&ldquo;{t('TESTIMONIAL_3_TEXT')}&rdquo;</Paragraph>
+                      <Paragraph className="testimonial-text">
+                        &ldquo;{t('TESTIMONIAL_3_TEXT')}&rdquo;
+                      </Paragraph>
                     </div>
                     <div className="testimonial-author">
                       <div className="author-avatar">
@@ -795,21 +901,115 @@ export default function Landing() {
         {/* Contact Section */}
         <section className="contact-section">
           <div className="container">
-            <Title level={2} className="section-title">
-              {t('CONTACT_TITLE')}
-            </Title>
-            <Paragraph className="section-description">{t('CONTACT_DESC')}</Paragraph>
-            <div className="contact-buttons">
-              <Button
-                size="large"
-                href="https://t.me/laclassefr"
-                target="_blank"
-                rel="noreferrer"
-                className="contact-button"
-              >
-                📱 {t('CONTACT_TELEGRAM')}
-              </Button>
-            </div>
+            <Row gutter={[48, 32]}>
+              <Col xs={24} lg={12}>
+                <div className="section-heading">
+                  <Title level={2} className="section-title">
+                    {t('CONTACT_TITLE')}
+                  </Title>
+                  <Paragraph className="section-description">
+                    {t('CONTACT_DESC')}
+                  </Paragraph>
+                  <div className="contact-info">
+                    <Button
+                      size="large"
+                      href="https://t.me/laclassefr"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="contact-button"
+                      icon={<CommentOutlined />}
+                    >
+                      📱 {t('CONTACT_TELEGRAM')}
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+              <Col xs={24} lg={12}>
+                <Card className="contact-form-card">
+                  <Form form={form} layout="vertical" onFinish={handleSubmit}>
+                    <Form.Item
+                      name="name"
+                      label={t('CONTACT_NAME') || 'Your Name'}
+                      rules={[
+                        {
+                          required: true,
+                          message: t('CONTACT_NAME_REQUIRED') || 'Please enter your name',
+                        },
+                      ]}
+                    >
+                      <Input
+                        size="large"
+                        placeholder={t('CONTACT_NAME_PLACEHOLDER') || 'Your Name...'}
+                      />
+                    </Form.Item>
+
+                    <Form.Item
+                      name="email"
+                      label={t('CONTACT_EMAIL') || 'Your Email'}
+                      rules={[
+                        {
+                          required: true,
+                          message:
+                            t('CONTACT_EMAIL_REQUIRED') || 'Please enter your email',
+                        },
+                        {
+                          type: 'email',
+                          message:
+                            t('CONTACT_EMAIL_INVALID') || 'Please enter a valid email',
+                        },
+                      ]}
+                    >
+                      <Input
+                        size="large"
+                        placeholder={t('CONTACT_EMAIL_PLACEHOLDER') || 'Your E-mail...'}
+                      />
+                    </Form.Item>
+
+                    <Form.Item
+                      name="telegram"
+                      label={t('CONTACT_TELEGRAM_TAG') || 'Telegram (optional)'}
+                    >
+                      <Input
+                        size="large"
+                        placeholder={
+                          t('CONTACT_TELEGRAM_PLACEHOLDER') || 'Your telegram tag'
+                        }
+                      />
+                    </Form.Item>
+
+                    <Form.Item
+                      name="message"
+                      label={t('CONTACT_MESSAGE') || 'Your Message'}
+                      rules={[
+                        {
+                          required: true,
+                          message:
+                            t('CONTACT_MESSAGE_REQUIRED') || 'Please enter your message',
+                        },
+                      ]}
+                    >
+                      <TextArea
+                        rows={4}
+                        placeholder={t('CONTACT_MESSAGE_PLACEHOLDER') || 'Your Message'}
+                      />
+                    </Form.Item>
+
+                    <Form.Item>
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        size="large"
+                        block
+                        loading={loading}
+                        className="contact-submit-button"
+                      >
+                        {t('CONTACT_SUBMIT') || 'Send Message Now'}
+                      </Button>
+                    </Form.Item>
+                  </Form>
+                </Card>
+              </Col>
+            </Row>
           </div>
         </section>
       </main>
@@ -825,5 +1025,3 @@ export default function Landing() {
     </div>
   )
 }
-
-

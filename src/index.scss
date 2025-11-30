@@ -1,10 +1,36 @@
 @import '~antd/dist/reset.css';
 @import './utils/theme/antd_overwrite.scss';
+
+* {
+  // Improve text rendering on mobile
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // Prevent text size adjustment on orientation change
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 html,
 body {
   overscroll-behavior: none;
-  // min-height: 100vh;
-  // background-color: red;
+  // Prevent horizontal scroll on mobile
+  overflow-x: hidden;
+  // Better touch scrolling on iOS
+  -webkit-overflow-scrolling: touch;
+}
+
+// Improve tap targets on mobile
+button,
+a,
+input,
+select,
+textarea {
+  // Prevent double-tap zoom on mobile
+  touch-action: manipulation;
+  // Remove tap highlight on mobile
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 a:link,
@@ -12,6 +38,7 @@ a:visited {
   color: inherit;
   text-decoration: none;
 }
+
 h1,
 h2,
 h3,
@@ -23,7 +50,20 @@ h4 {
   font-weight: inherit;
   line-height: inherit;
 }
+
 h5,
 h6 {
   margin: 0;
+}
+
+// Better image rendering on mobile
+img {
+  max-width: 100%;
+  height: auto;
+  // Prevent image dragging on mobile
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
 }

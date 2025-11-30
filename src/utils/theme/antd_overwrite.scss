@@ -3,3 +3,54 @@
 .ant-layout {
   min-height: 100vh;
 }
+
+// Mobile optimizations for Ant Design components
+@media (max-width: 576px) {
+  // Better button sizing for mobile
+  .ant-btn {
+    min-height: 44px; // Touch-friendly
+    padding: 8px 16px;
+  }
+
+  .ant-btn-lg {
+    min-height: 48px;
+    padding: 10px 20px;
+  }
+
+  // Better select dropdown on mobile
+  .ant-select-dropdown {
+    max-height: 50vh !important;
+  }
+
+  // Better modal on mobile
+  .ant-modal {
+    max-width: calc(100vw - 32px) !important;
+    margin: 16px auto;
+  }
+
+  // Better card padding on mobile
+  .ant-card {
+    .ant-card-body {
+      padding: 16px;
+    }
+  }
+
+  // Better typography on mobile
+  .ant-typography {
+    h1.ant-typography {
+      font-size: 1.875rem;
+    }
+    
+    h2.ant-typography {
+      font-size: 1.625rem;
+    }
+    
+    h3.ant-typography {
+      font-size: 1.375rem;
+    }
+    
+    h4.ant-typography {
+      font-size: 1.125rem;
+    }
+  }
+}

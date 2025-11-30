@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Select, Typography, Card, Row, Col } from 'antd'
+import { Button, Select, Typography, Card, Row, Col, Flex } from 'antd'
 import { useTranslation } from 'react-i18next'
 import {
   BookOutlined,
@@ -18,6 +18,7 @@ import {
   LikeOutlined,
 } from '@ant-design/icons'
 import Logo from '../../assets/Logo.png'
+import Olga from '../../assets/Olga.jpg'
 import './Landing.scss'
 
 const { Title, Paragraph, Text } = Typography
@@ -90,22 +91,22 @@ export default function Landing() {
                     <div className="stat-item">
                       <StarOutlined className="stat-icon" />
                       <div>
-                        <div className="stat-number">500+</div>
-                        <div className="stat-label">Happy Students</div>
+                        <div className="stat-number">{t('HAPPY_STUDENTS_COUNT')}</div>
+                        <div className="stat-label">{t('HAPPY_STUDENTS')}</div>
                       </div>
                     </div>
                     <div className="stat-item">
                       <TrophyOutlined className="stat-icon" />
                       <div>
-                        <div className="stat-number">95%</div>
-                        <div className="stat-label">Success Rate</div>
+                        <div className="stat-number">{t('SUCCESS_RATE_PERCENT')}</div>
+                        <div className="stat-label">{t('SUCCESS_RATE')}</div>
                       </div>
                     </div>
                     <div className="stat-item">
                       <FireOutlined className="stat-icon" />
                       <div>
-                        <div className="stat-number">1000+</div>
-                        <div className="stat-label">Lessons Taught</div>
+                        <div className="stat-number">{t('LESSONS_TAUGHT_COUNT')}</div>
+                        <div className="stat-label">{t('LESSONS_TAUGHT')}</div>
                       </div>
                     </div>
                   </div>
@@ -325,7 +326,7 @@ export default function Landing() {
                 <Col xs={24} md={8} className="teacher-image-col">
                   <div className="teacher-avatar-wrapper">
                     <img
-                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
+                      src={Olga}
                       alt="Professional French teacher Olga with extensive teaching experience and passion for language education"
                       className="teacher-photo"
                     />
@@ -340,13 +341,13 @@ export default function Landing() {
                   </Title>
                   <div className="teacher-credentials">
                     <div className="credential-item">
-                      <TrophyOutlined /> 5+ Years Experience
+                      <TrophyOutlined /> {t('YEARS_EXPERIENCE')}
                     </div>
                     <div className="credential-item">
-                      <CheckCircleOutlined /> Certified Teacher
+                      <CheckCircleOutlined /> {t('CERTIFIED_TEACHER')}
                     </div>
                     <div className="credential-item">
-                      <HeartOutlined /> 500+ Happy Students
+                      <HeartOutlined /> {t('HAPPY_STUDENTS_COUNT')}
                     </div>
                   </div>
                   <Paragraph className="teacher-description">{t('TEACHER_DESC')}</Paragraph>
@@ -357,6 +358,151 @@ export default function Landing() {
                 </Col>
               </Row>
             </Card>
+          </div>
+        </section>
+
+        {/* Results Section */}
+        <section className="results-section">
+          <div className="container">
+            <div className="section-header">
+              <Title level={2} className="section-title">
+                {t('RESULTS_TITLE')}
+              </Title>
+              <Paragraph className="section-subtitle">{t('RESULTS_SUBTITLE')}</Paragraph>
+              <div className="title-decoration">
+                <span className="decoration-line"></span>
+                <TrophyOutlined className="decoration-icon" />
+                <span className="decoration-line"></span>
+              </div>
+            </div>
+            <Row gutter={[24, 24]}>
+              <Col xs={24} sm={12} lg={6}>
+                <Card className="result-card" bordered={false}>
+                  <div className="result-icon-wrapper">
+                    <CommentOutlined className="result-icon" />
+                  </div>
+                  <Title level={4} className="result-title">
+                    {t('RESULT_1_TITLE')}
+                  </Title>
+                  <Paragraph className="result-description">{t('RESULT_1_DESC')}</Paragraph>
+                </Card>
+              </Col>
+              <Col xs={24} sm={12} lg={6}>
+                <Card className="result-card" bordered={false}>
+                  <div className="result-icon-wrapper">
+                    <FireOutlined className="result-icon" />
+                  </div>
+                  <Title level={4} className="result-title">
+                    {t('RESULT_2_TITLE')}
+                  </Title>
+                  <Paragraph className="result-description">{t('RESULT_2_DESC')}</Paragraph>
+                </Card>
+              </Col>
+              <Col xs={24} sm={12} lg={6}>
+                <Card className="result-card" bordered={false}>
+                  <div className="result-icon-wrapper">
+                    <GlobalOutlined className="result-icon" />
+                  </div>
+                  <Title level={4} className="result-title">
+                    {t('RESULT_3_TITLE')}
+                  </Title>
+                  <Paragraph className="result-description">{t('RESULT_3_DESC')}</Paragraph>
+                </Card>
+              </Col>
+              <Col xs={24} sm={12} lg={6}>
+                <Card className="result-card" bordered={false}>
+                  <div className="result-icon-wrapper">
+                    <CheckCircleOutlined className="result-icon" />
+                  </div>
+                  <Title level={4} className="result-title">
+                    {t('RESULT_4_TITLE')}
+                  </Title>
+                  <Paragraph className="result-description">{t('RESULT_4_DESC')}</Paragraph>
+                </Card>
+              </Col>
+            </Row>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="testimonials-section">
+          <div className="container">
+            <div className="section-header">
+              <Title level={2} className="section-title">
+                {t('TESTIMONIALS_TITLE')}
+              </Title>
+              <Paragraph className="section-subtitle">{t('TESTIMONIALS_SUBTITLE')}</Paragraph>
+              <div className="title-decoration">
+                <span className="decoration-line"></span>
+                <SmileOutlined className="decoration-icon" />
+                <span className="decoration-line"></span>
+              </div>
+            </div>
+            <Row gutter={[32, 32]}>
+              <Col xs={24} md={8}>
+                <Card className="testimonial-card" bordered={false} style={{ height: '100%' }}>
+                  <Flex vertical justify="space-between" style={{ minHeight: 220, height: '100%' }}>
+                    <div>
+                      <div className="testimonial-quote-icon">
+                        <CommentOutlined />
+                      </div>
+                      <Paragraph className="testimonial-text">&ldquo;{t('TESTIMONIAL_1_TEXT')}&rdquo;</Paragraph>
+                    </div>
+                    <div className="testimonial-author">
+                      <div className="author-avatar">
+                        <StarOutlined />
+                      </div>
+                      <div className="author-info">
+                        <Text className="author-name">{t('TESTIMONIAL_1_NAME')}</Text>
+                        <Text className="author-level">{t('TESTIMONIAL_1_LEVEL')}</Text>
+                      </div>
+                    </div>
+                  </Flex>
+                </Card>
+              </Col>
+              <Col xs={24} md={8}>
+                <Card className="testimonial-card" bordered={false} style={{ height: '100%' }}>
+                  <Flex vertical justify="space-between" style={{ minHeight: 220, height: '100%' }}>
+                    <div>
+                      <div className="testimonial-quote-icon">
+                        <CommentOutlined />
+                      </div>
+                      <Paragraph className="testimonial-text">&ldquo;{t('TESTIMONIAL_2_TEXT')}&rdquo;</Paragraph>
+                    </div>
+                    <div className="testimonial-author">
+                      <div className="author-avatar">
+                        <TrophyOutlined />
+                      </div>
+                      <div className="author-info">
+                        <Text className="author-name">{t('TESTIMONIAL_2_NAME')}</Text>
+                        <Text className="author-level">{t('TESTIMONIAL_2_LEVEL')}</Text>
+                      </div>
+                    </div>
+                  </Flex>
+                </Card>
+              </Col>
+              <Col xs={24} md={8}>
+                <Card className="testimonial-card" bordered={false} style={{ height: '100%' }}>
+                  <Flex vertical justify="space-between" style={{ minHeight: 220, height: '100%' }}>
+                    <div>
+                      <div className="testimonial-quote-icon">
+                        <CommentOutlined />
+                      </div>
+                      <Paragraph className="testimonial-text">&ldquo;{t('TESTIMONIAL_3_TEXT')}&rdquo;</Paragraph>
+                    </div>
+                    <div className="testimonial-author">
+                      <div className="author-avatar">
+                        <FireOutlined />
+                      </div>
+                      <div className="author-info">
+                        <Text className="author-name">{t('TESTIMONIAL_3_NAME')}</Text>
+                        <Text className="author-level">{t('TESTIMONIAL_3_LEVEL')}</Text>
+                      </div>
+                    </div>
+                  </Flex>
+                </Card>
+              </Col>
+            </Row>
           </div>
         </section>
 
@@ -420,6 +566,198 @@ export default function Landing() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section className="pricing-section">
+          <div className="container">
+            <div className="section-header">
+              <Title level={2} className="section-title">
+                {t('PRICING_TITLE')}
+              </Title>
+              <Paragraph className="section-subtitle">{t('PRICING_SUBTITLE')}</Paragraph>
+              <div className="title-decoration">
+                <span className="decoration-line"></span>
+                <StarOutlined className="decoration-icon" />
+                <span className="decoration-line"></span>
+              </div>
+            </div>
+            <Row gutter={[32, 32]} justify="center">
+              <Col xs={24} md={8}>
+                <Card className="pricing-card" bordered={false}>
+                  <Title level={3} className="pricing-title">
+                    {t('PRICE_GROUP_TITLE')}
+                  </Title>
+                  <div className="pricing-price">
+                    <span className="price-amount">{t('PRICE_GROUP_PRICE')}</span>
+                    <span className="price-unit">{t('PRICE_GROUP_UNIT')}</span>
+                  </div>
+                  <ul className="pricing-features">
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_GROUP_FEATURE_1')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_GROUP_FEATURE_2')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_GROUP_FEATURE_3')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_GROUP_FEATURE_4')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_GROUP_FEATURE_5')}
+                    </li>
+                  </ul>
+                  <Button
+                    type="default"
+                    size="large"
+                    block
+                    href="https://t.me/laclassefr"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pricing-button"
+                  >
+                    {t('PRICE_BUTTON')}
+                  </Button>
+                </Card>
+              </Col>
+              <Col xs={24} md={8}>
+                <Card className="pricing-card pricing-card-popular" bordered={false}>
+                  <div className="popular-badge">{t('PRICE_POPULAR')}</div>
+                  <Title level={3} className="pricing-title">
+                    {t('PRICE_PRIVATE_TITLE')}
+                  </Title>
+                  <div className="pricing-price">
+                    <span className="price-amount">{t('PRICE_PRIVATE_PRICE')}</span>
+                    <span className="price-unit">{t('PRICE_PRIVATE_UNIT')}</span>
+                  </div>
+                  <ul className="pricing-features">
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_PRIVATE_FEATURE_1')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_PRIVATE_FEATURE_2')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_PRIVATE_FEATURE_3')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_PRIVATE_FEATURE_4')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_PRIVATE_FEATURE_5')}
+                    </li>
+                  </ul>
+                  <Button
+                    type="primary"
+                    size="large"
+                    block
+                    href="https://t.me/laclassefr"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pricing-button pricing-button-primary"
+                  >
+                    {t('PRICE_BUTTON')}
+                  </Button>
+                </Card>
+              </Col>
+              <Col xs={24} md={8}>
+                <Card className="pricing-card" bordered={false}>
+                  <Title level={3} className="pricing-title">
+                    {t('PRICE_IMMERSION_TITLE')}
+                  </Title>
+                  <div className="pricing-price">
+                    <span className="price-amount">{t('PRICE_IMMERSION_PRICE')}</span>
+                    <span className="price-unit">{t('PRICE_IMMERSION_UNIT')}</span>
+                  </div>
+                  <ul className="pricing-features">
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_IMMERSION_FEATURE_1')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_IMMERSION_FEATURE_2')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_IMMERSION_FEATURE_4')}
+                    </li>
+                    <li>
+                      <CheckCircleOutlined /> {t('PRICE_IMMERSION_FEATURE_5')}
+                    </li>
+                  </ul>
+                  <Button
+                    type="default"
+                    size="large"
+                    block
+                    href="https://t.me/laclassefr"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pricing-button"
+                  >
+                    {t('PRICE_BUTTON')}
+                  </Button>
+                </Card>
+              </Col>
+            </Row>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="faq-section">
+          <div className="container">
+            <div className="section-header">
+              <Title level={2} className="section-title">
+                {t('FAQ_TITLE')}
+              </Title>
+              <div className="title-decoration">
+                <span className="decoration-line"></span>
+                <CommentOutlined className="decoration-icon" />
+                <span className="decoration-line"></span>
+              </div>
+            </div>
+            <Row gutter={[32, 32]}>
+              <Col xs={24} lg={12}>
+                <Card className="faq-card" bordered={false}>
+                  <Title level={4} className="faq-question">
+                    {t('FAQ_1_Q')}
+                  </Title>
+                  <Paragraph className="faq-answer">{t('FAQ_1_A')}</Paragraph>
+                </Card>
+                <Card className="faq-card" bordered={false}>
+                  <Title level={4} className="faq-question">
+                    {t('FAQ_2_Q')}
+                  </Title>
+                  <Paragraph className="faq-answer">{t('FAQ_2_A')}</Paragraph>
+                </Card>
+                <Card className="faq-card" bordered={false}>
+                  <Title level={4} className="faq-question">
+                    {t('FAQ_3_Q')}
+                  </Title>
+                  <Paragraph className="faq-answer">{t('FAQ_3_A')}</Paragraph>
+                </Card>
+              </Col>
+              <Col xs={24} lg={12}>
+                <Card className="faq-card" bordered={false}>
+                  <Title level={4} className="faq-question">
+                    {t('FAQ_4_Q')}
+                  </Title>
+                  <Paragraph className="faq-answer">{t('FAQ_4_A')}</Paragraph>
+                </Card>
+                <Card className="faq-card" bordered={false}>
+                  <Title level={4} className="faq-question">
+                    {t('FAQ_5_Q')}
+                  </Title>
+                  <Paragraph className="faq-answer">{t('FAQ_5_A')}</Paragraph>
+                </Card>
+                <Card className="faq-card" bordered={false}>
+                  <Title level={4} className="faq-question">
+                    {t('FAQ_6_Q')}
+                  </Title>
+                  <Paragraph className="faq-answer">{t('FAQ_6_A')}</Paragraph>
+                </Card>
+              </Col>
+            </Row>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="cta-section">
           <div className="container">
@@ -444,10 +782,10 @@ export default function Landing() {
               </Button>
               <div className="cta-trust-badges">
                 <div className="trust-badge">
-                  <CheckCircleOutlined /> Satisfaction Guaranteed
+                  <CheckCircleOutlined /> {t('TRUST_BADGE_SATISFACTION')}
                 </div>
                 <div className="trust-badge">
-                  <HeartOutlined /> Join Our Community
+                  <HeartOutlined /> {t('TRUST_BADGE_COMMUNITY')}
                 </div>
               </div>
             </div>

@@ -83,11 +83,34 @@
         }
       }
 
-      .language-select {
-        min-width: 140px;
+      // Desktop language selector
+      .language-label-desktop,
+      .language-select-desktop {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
 
-        @media (max-width: 576px) {
-          min-width: 100px;
+      .language-select-desktop {
+        min-width: 140px;
+      }
+
+      // Mobile language button
+      .language-button-mobile {
+        display: none;
+
+        @media (max-width: 768px) {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          border-radius: 8px;
+          font-weight: 500;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          
+          &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          }
         }
       }
     }

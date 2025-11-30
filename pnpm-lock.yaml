@@ -89,6 +89,9 @@ importers:
       react-scripts:
         specifier: ^5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.28.5))(@babel/plugin-transform-react-jsx@7.27.1(@babel/core@7.28.5))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.2.0)(sass@1.94.0)(type-fest@0.21.3)(typescript@4.9.5)
+      react-swipeable:
+        specifier: ^7.0.2
+        version: 7.0.2(react@19.2.0)
       react-tsparticles:
         specifier: ^2.12.2
         version: 2.12.2(react@19.2.0)
@@ -5463,6 +5466,11 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  react-swipeable@7.0.2:
+    resolution: {integrity: sha512-v1Qx1l+aC2fdxKa9aKJiaU/ZxmJ5o98RMoFwUqAAzVWUcxgfHFXDDruCKXhw6zIYXm6V64JiHgP9f6mlME5l8w==}
+    peerDependencies:
+      react: ^16.8.3 || ^17 || ^18 || ^19.0.0 || ^19.0.0-rc
 
   react-tsparticles@2.12.2:
     resolution: {integrity: sha512-/nrEbyL8UROXKIMXe+f+LZN2ckvkwV2Qa+GGe/H26oEIc+wq/ybSG9REDwQiSt2OaDQGu0MwmA4BKmkL6wAWcA==}
@@ -13214,6 +13222,10 @@ snapshots:
       - webpack-hot-middleware
       - webpack-plugin-serve
       - yaml
+
+  react-swipeable@7.0.2(react@19.2.0):
+    dependencies:
+      react: 19.2.0
 
   react-tsparticles@2.12.2(react@19.2.0):
     dependencies:

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {
   Button,
   Select,
@@ -12,6 +12,7 @@ import {
   message,
 } from 'antd'
 import { useTranslation } from 'react-i18next'
+import SwipeableDrawer, { SwipeableDrawerMethods } from '../../components/SwipeableDrawer'
 import {
   BookOutlined,
   TeamOutlined,
@@ -42,12 +43,18 @@ export default function Landing() {
   const { t, i18n } = useTranslation('common')
   const [form] = Form.useForm()
   const [loading, setLoading] = useState(false)
+  const languageDrawerRef = useRef<SwipeableDrawerMethods>(null)
 
   const languages = [
-    { value: 'en', label: t('LANG_EN') },
-    { value: 'fr', label: t('LANG_FR') },
-    { value: 'ru', label: t('LANG_RU') },
+    { value: 'en', label: `🇬🇧 ${t('LANG_EN')}` },
+    { value: 'fr', label: `🇫🇷 ${t('LANG_FR')}` },
+    { value: 'ru', label: `🇷🇺 ${t('LANG_RU')}` },
   ]
+
+  const handleLanguageChange = (lng: string) => {
+    i18n.changeLanguage(lng)
+    languageDrawerRef.current?.close()
+  }
 
   const handleSubmit = async (values: any) => {
     setLoading(true)
@@ -103,14 +110,20 @@ ${msg}
               </Title>
             </div>
             <div className="language-selector">
-              <Text className="language-label">{t('LANGUAGE')}:</Text>
+              <Text className="language-label language-label-desktop">{t('LANGUAGE')}:</Text>
               <Select
                 size="middle"
-                className="language-select"
+                className="language-select language-select-desktop"
                 options={languages}
                 value={i18n.language}
                 onChange={(lng) => i18n.changeLanguage(lng)}
               />
+              <Button
+                className="language-button-mobile"
+                onClick={() => languageDrawerRef.current?.open()}
+              >
+                {languages.find(l => l.value === i18n.language)?.label}
+              </Button>
             </div>
           </div>
         </div>
@@ -1022,6 +1035,27 @@ ${msg}
           </Text>
         </div>
       </footer>
+
+      {/* Language Drawer for Mobile */}
+      <SwipeableDrawer
+        ref={languageDrawerRef}
+        title={t('LANGUAGE')}
+        height="auto"
+      >
+        <Flex vertical gap={12} style={{ width: '100%', padding: '0 16px' }}>
+          {languages.map((lang) => (
+            <Button
+              key={lang.value}
+              type={i18n.language === lang.value ? 'primary' : 'default'}
+              size="large"
+              block
+              onClick={() => handleLanguageChange(lang.value)}
+            >
+              {lang.label}
+            </Button>
+          ))}
+        </Flex>
+      </SwipeableDrawer>
     </div>
   )
 }
